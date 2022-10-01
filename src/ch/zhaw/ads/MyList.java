@@ -1,12 +1,13 @@
 package ch.zhaw.ads;
 
 import java.util.AbstractList;
+import java.util.Comparator;
 
 public class MyList extends AbstractList {
 
     public MyList() {
         size = 0;
-        head = new ListNode("dummy");
+        head = new ListNode(null);
         head.prev = head;
         head.next = head;
     }
@@ -68,7 +69,7 @@ public class MyList extends AbstractList {
     public Object get(int pos) {
         if (pos <= size) {
             ListNode tmp = head;
-            for (int i = 0; i < pos; i++) {
+            for (int i = 0; i <= pos; i++) {
                 tmp = tmp.next;
             }
             return tmp.value;
